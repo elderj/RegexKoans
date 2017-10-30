@@ -4,7 +4,7 @@ describe("Repeating Characters", function() {
     // If a character is optional, follow it with a ?
     // in the pattern
     
-    var fixThisPattern = /^___$/;
+    var fixThisPattern = /^soo?n$/;
     
     expect( 'son'   ).toMatch(fixThisPattern);
     expect( 'soon'  ).toMatch(fixThisPattern);
@@ -14,7 +14,7 @@ describe("Repeating Characters", function() {
   it('use + to match One Or More of a character', function() {
     var thisPatternWorks = /^so+n$/
     
-    var fixThisPattern = /^___$/;
+    var fixThisPattern = /^x +y$/;
     
     expect( 'son'        ).toMatch(thisPatternWorks);
     expect( 'soon'       ).toMatch(thisPatternWorks);
@@ -27,7 +27,7 @@ describe("Repeating Characters", function() {
   });
   
   it('use * to match Zero Or More of a character', function() {
-    var fixThisPattern = /^___$/;
+    var fixThisPattern = /^x *y$/;
     
     expect( 'x y'     ).toMatch(fixThisPattern);
     expect( 'x     y' ).toMatch(fixThisPattern);
@@ -38,7 +38,7 @@ describe("Repeating Characters", function() {
     
     var thisPatternWorks = /^xy{3}z$/;
     
-    var fixThisPattern = /^___$/;
+    var fixThisPattern = /^614\-?5{3}\-?1234$/;
     
     expect( 'xyyyz' ).toMatch(thisPatternWorks);
     
@@ -68,7 +68,7 @@ describe("Repeating Characters", function() {
   });
   
   it('use {n,} for "at least n" and {,m} for "not more than m" repeated characters', function() {
-    var fixThisPattern = /^___$/;
+    var fixThisPattern = /^a[ ]{2,}b$/;
     
     expect( 'a  b' ).toMatch(fixThisPattern);
     expect( 'a                                                                 b' ).toMatch(fixThisPattern);
